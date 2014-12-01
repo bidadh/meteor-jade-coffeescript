@@ -1,0 +1,8 @@
+template(name='layout')
+   body
+      .container
+         header.navbar.navbar-default(role='navigation')
+            .navbar-header
+               a.navbar-brand(href='{{pathFor "postsList"}}') Microscope
+         #main.row-fluid
+            +yield
