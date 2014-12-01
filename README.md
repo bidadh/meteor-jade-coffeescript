@@ -7,3 +7,6 @@
 
 # Route
     ## meteor add iron:router
+
+#Spinner
+    ## meteor add sacha:spin

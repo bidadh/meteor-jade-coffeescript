@@ -1,4 +1,8 @@
-Router.configure layoutTemplate: "layout"
+Router.configure
+  layoutTemplate: 'layout'
+  loadingTemplate: 'loading'
+  waitOn: ->
+    Meteor.subscribe 'posts', 'bob-smith'
 
-Router.route "/",
-  name: "postsList"
+Router.route '/',
+  name: 'postsList'
