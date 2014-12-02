@@ -3,6 +3,7 @@
     ## meteor add underscore
     ## meteor add mizzao-bootstrap-3
     ## meteor add mquandalle:jade
+        ### https://atmospherejs.com/mquandalle/jade
     ## meteor remove autopublish
 
 # Route
