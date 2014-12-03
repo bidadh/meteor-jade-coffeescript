@@ -11,3 +11,7 @@
 
 #Spinner
     ## meteor add sacha:spin
+
+#Users and Accounts
+    ## meteor add ian:accounts-ui-bootstrap-3
+    ## meteor add accounts-password
