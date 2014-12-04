@@ -10,7 +10,8 @@ template(name='header')
             a.navbar-brand(href='{{pathFor "postsList"}}') Microscope
          #navigation.collapse.navbar-collapse
             ul.nav.navbar-nav
-               li
-                  a(href='{{pathFor "postSubmit"}}') Submit Post
+               +if currentUser
+                  li
+                     a(href='{{pathFor "postSubmit"}}') Submit Post
             ul.nav.navbar-nav.navbar-right
                +loginButtons
