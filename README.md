@@ -15,3 +15,6 @@
 #Users and Accounts
     ## meteor add ian:accounts-ui-bootstrap-3
     ## meteor add accounts-password
+
+#Secure app
+    ## meteor remove insecure
