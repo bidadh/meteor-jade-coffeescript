@@ -3,7 +3,7 @@ Router.configure
   loadingTemplate: 'loading'
   notFoundTemplate: 'notFound'
   waitOn: ->
-    Meteor.subscribe 'posts', 'bob-smith'
+    Meteor.subscribe 'posts'
 
 Router.route '/',
   name: 'postsList'

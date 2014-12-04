@@ -1,2 +1,2 @@
 Meteor.publish 'posts', (author)->
-  return Posts.find({flagged:false,author:author})
+  return Posts.find({flagged:false})
