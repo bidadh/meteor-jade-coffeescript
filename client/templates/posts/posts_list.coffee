@@ -1,3 +1,3 @@
 Template.postsList.helpers
   posts: ->
-    return Posts.find({category: 'JavaScript'})
+    return Posts.find({}, {sort: {submitted: -1}})
