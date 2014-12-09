@@ -1,5 +1,7 @@
 ##[Meteor Github](https://github.com/meteor)
 ##[Meteor Tutorial](https://www.meteor.com/install)
+##[BulletProof Meteor](https://bulletproofmeteor.com/basics/introduction/?utm_source=kadira&utm_medium=email&utm_term=kadira&utm_content=getting-started-email&utm_campaign=kadira)
+##[modulus (deploy nodeks and meteor apps)](https://modulus.io/)
 
 # Videos:
 ##[Realtime Conference](http://2012.realtimeconf.com/video/matt-debergalis)
