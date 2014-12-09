@@ -18,7 +18,8 @@ Package.onUse(function(api) {
 });
 
 Package.onTest(function(api) {
-  api.use('tinytest');
-  api.use('bidadh:errors');
-  api.addFiles('bidadh:errors-tests.js');
+  api.use('bidadh:errors', 'client');
+  api.use(['tinytest', 'test-helpers'], 'client');
+
+  api.addFiles('errors_tests.js', 'client');
 });
