@@ -5,6 +5,5 @@ template(name="postItem")
             a(href="#{url}") #{title}
             span #{domain}
          p submitted by #{author}
-            +if ownPost
-               a(href='{{pathFor "postEdit"}}') Edit
+            a(href='{{pathFor "postEdit"}}') Edit
       a.discuss.btn.btn-default(href="{{pathFor 'postPage'}}") Discuss

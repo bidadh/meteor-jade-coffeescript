@@ -13,6 +13,7 @@
 ##[underscore](http://docs.meteor.com/#/full/random)
 ##[meteor-collection-hooks](https://github.com/matb33/meteor-collection-hooks)
 ##[checks](http://docs.meteor.com/#/full/accountsui)
+##[Meteor Methods vs Client-Side Operations](https://www.discovermeteor.com/blog/meteor-methods-client-side-operations/)
 
 # Frameworks
 ##[UNDERSCORE.JS](http://underscorejs.org/)
