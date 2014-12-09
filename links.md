@@ -21,3 +21,6 @@
 ##[spyjs](http://blog.jetbrains.com/webstorm/2014/04/spy-js-webstorm-secret-service/)
 ##[ionic](http://ionicframework.com/docs/api/directive/ionContent/)
 ##[j2objc](https://github.com/google/j2objc)
+
+# Error Handling
+##[Kadira](https://kadira.io/)
