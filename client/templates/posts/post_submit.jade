@@ -1,11 +1,13 @@
 template(name='postSubmit')
    form.main.form
-      .form-group
+      div(class='form-group {{errorClass "url"}}')
          label.control-label(for='url') URL
          .controls
             input#url.form-control(name='url', type='text', value='', placeholder='Your URL')
-      .form-group
+            span.help-block {{errorMessage 'url'}}
+      div(class='form-group {{errorClass "title"}}')
          label.control-label(for='title') Title
          .controls
             input#title.form-control(name='title', type='text', value='', placeholder='Name your Post')
+            span.help-block {{errorMessage 'title'}}
       input.btn.btn-primary(type='submit', value='Submit')

@@ -1,3 +1,12 @@
+Template.postEdit.created = ->
+  Session.set 'postSubmitErrors', {}
+
+Template.postEdit.helpers
+  errorMessage : (field) ->
+    return Session.get('postSubmitErrors')[field]
+  errorClass : (field) ->
+    return (if !!Session.get("postSubmitErrors")[field] then "has-error" else "")
+
 Template.postEdit.events
   'submit form': (e) ->
     e.preventDefault()
@@ -7,6 +16,10 @@ Template.postEdit.events
     postProperties =
       url: $(e.target).find('[name=url]').val()
       title: $(e.target).find('[name=title]').val()
+
+    errors = validatePost(postProperties);
+    if(errors.title || errors.url)
+      return Session.set 'postSubmitErrors', errors
 
     Meteor.call 'postUpdate', postProperties, this._id, (error, result) ->
       if(result.accessDenied)
