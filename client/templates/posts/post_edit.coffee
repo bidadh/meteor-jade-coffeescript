@@ -23,9 +23,9 @@ Template.postEdit.events
 
     Meteor.call 'postUpdate', postProperties, this._id, (error, result) ->
       if(result.accessDenied)
-        return throwError('Access Denied!')
+        Errors.throw 'Access Denied!'
       if(result.postExists)
-        throwError('This link has already been posted')
+        Errors.throw 'This link has already been posted'
       Router.go 'postPage',
         _id: currentPostId
 
@@ -35,7 +35,7 @@ Template.postEdit.events
       currentPostId = this._id
       Meteor.call 'postRemove', currentPostId, (error, result) ->
         if(error)
-          return throwError(error.reason)
+          Errors.throw error.reason
         if(result.accessDenied)
-          return throwError('Access Denied!')
+          Errors.throw 'Access Denied!'
         Router.go 'postsList'

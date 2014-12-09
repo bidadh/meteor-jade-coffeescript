@@ -21,8 +21,8 @@ Template.postSubmit.events
 
     Meteor.call 'postInsert', post, (error, result) ->
       if(error)
-        return throwError(error.reason)
+        Errors.throw error.reason
       if(result.postExists)
-        return throwError('This link has already been posted')
+        Errors.throw 'This link has already been posted'
       Router.go 'postPage',
         _id: result._id
