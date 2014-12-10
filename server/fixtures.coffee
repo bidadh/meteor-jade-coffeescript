@@ -10,6 +10,7 @@ if Posts.find().count() is 0
     profile:
       name: 'Sacha Greif'
   sacha = Meteor.users.findOne sachaId
+
   telescopeId = Posts.insert
     title: "Introducing Telescope"
     userId: sacha._id
