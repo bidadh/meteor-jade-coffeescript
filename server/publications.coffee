@@ -1,2 +1,5 @@
-Meteor.publish 'posts', (author)->
-  return Posts.find({flagged:false})
+Meteor.publish 'posts', ->
+  Posts.find()
+
+Meteor.publish 'comments', ->
+  Comments.find()

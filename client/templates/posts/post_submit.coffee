@@ -13,7 +13,6 @@ Template.postSubmit.events
     post =
       url: $(e.target).find('[name=url]').val()
       title: $(e.target).find('[name=title]').val()
-      category: 'JavaScript'
 
     errors = validatePost(post);
     if(errors.title || errors.url)
