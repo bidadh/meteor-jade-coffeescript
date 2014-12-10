@@ -2,6 +2,8 @@ Template.postItem.helpers
   domain: ->
     a = document.createElement 'a'
     a.href = this.url
-    return a.hostname
+    a.hostname
   ownPost: ->
-    return this.userId == Meteor.userId()
+    this.userId == Meteor.userId()
+  commentsCount: ->
+    Comments.find({postId: this._id}).count()
