@@ -47,7 +47,7 @@ if Posts.find().count() is 0
     submitted: new Date(now - 12 * 3600 * 1000)
 
   i = 0
-  while i < 10
+  while i < 100
     Posts.insert
       title: 'Test Post #' + i,
       userId: sacha._id,
