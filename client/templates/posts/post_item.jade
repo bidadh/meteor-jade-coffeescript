@@ -1,6 +1,6 @@
 template(name="postItem")
    .post
-      a.upvote.btn.btn-default.glyphicon.glyphicon-arrow-up(href='#')
+      a(href='#', class='upvote btn btn-default glyphicon glyphicon-arrow-up #{upvotedClass}')
       .post-content
          h3
             a(href="#{url}") #{title}
