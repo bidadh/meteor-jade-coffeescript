@@ -7,3 +7,8 @@ Template.postItem.helpers
     this.userId == Meteor.userId()
   commentsCount: ->
     Comments.find({postId: this._id}).count()
+
+Template.postItem.events
+  'click .upvote': (e) ->
+    e.preventDefault()
+    Meteor.call 'upvote', this._id
