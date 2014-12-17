@@ -31,6 +31,7 @@ Template.postEdit.events
 
   'click .delete': (e) ->
     e.preventDefault()
+
     if(confirm('Delete this Post?'))
       currentPostId = this._id
       Meteor.call 'postRemove', currentPostId, (error, result) ->
@@ -38,4 +39,4 @@ Template.postEdit.events
           Errors.throw error.reason
         if(result.accessDenied)
           Errors.throw 'Access Denied!'
-        Router.go 'postsList'
+        Router.go 'home'

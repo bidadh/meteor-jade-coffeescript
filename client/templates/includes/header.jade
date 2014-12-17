@@ -10,6 +10,10 @@ template(name='header')
             a.navbar-brand(href='{{pathFor "postsList"}}') Microscope
          #navigation.collapse.navbar-collapse
             ul.nav.navbar-nav
+               li
+                  a(href='{{pathFor "newPosts"}}') New
+               li
+                  a(href='{{pathFor "bestAdded routes for post lists, and pages to display them.Posts"}}') Best
                +if currentUser
                   li
                      a(href='{{pathFor "postSubmit"}}') Submit Post
