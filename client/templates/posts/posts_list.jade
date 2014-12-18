@@ -3,7 +3,7 @@ template(name='postsList')
       +each posts
          +postItem
       +if hasMore
-         a.load-more(href='#{nextPath}') Load More
+         a.load-more(href='{{nextPath}}') Load More
       +else
          +unless ready
             +spinner
