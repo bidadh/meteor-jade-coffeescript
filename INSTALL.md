@@ -130,3 +130,44 @@
     export ROOT_URL='http://meteorapp.yourdomain.com/'
 
     forever main.js
+
+# Configure Upstart
+    sudo vim /etc/init/meteorapp.conf
+
+    # upstart service file at /etc/init/meteorapp.conf
+    description "Meteor.js (NodeJS) application"
+    author "Arthur Kazemi <bidadh@gmail.com>"
+
+    # When to start the service
+    start on started mongod and runlevel [2345]
+
+    # When to stop the service
+    #stop on shutdown
+
+    # Automatically restart process if crashed
+    respawn
+    respawn limit 10 5
+
+    # we don't use buil-in log because we use a script below
+    # console log
+
+    # drop root proviliges and switch to mymetorapp user
+    setuid arthur
+    setgid arthur
+
+    script
+        # set to home directory of the user Meteor will be running as
+        export PWD=/home/arthur
+        export HOME=/home/arthur
+        # leave as 127.0.0.1 for security
+        export BIND_IP=127.0.0.1
+        # the port nginx is proxying requests to
+        export PORT=58080
+        # this allows Meteor to figure out correct IP address of visitors
+        export HTTP_FORWARDED_COUNT=1
+        # MongoDB connection string using todos as database name
+        export MONGO_URL=mongodb://testuser:testuserpass@127.0.0.1:27017/testdatabase
+        # The domain name as configured previously as server_name in nginx
+        export ROOT_URL=http://meteorapp.raysazapps.com
+        exec node $HOME/projects/meteor/deploy/main.js >> $HOME/projects/meteor/deploy/meteorapp.log
+    end script
